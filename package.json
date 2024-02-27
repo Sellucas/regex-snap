@@ -1,0 +1,65 @@
+{
+  "name": "regexsnap",
+  "displayName": "RegexSnap",
+  "publisher": "Sellucas",
+  "description": "Insert Regex patterns effortlessly, in seconds!",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/regex.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/regex.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/regex.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/regex.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/regex.json"
+      },
+      {
+        "language": "css",
+        "path": "./snippets/regex.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/regex.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/regex.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.86.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}

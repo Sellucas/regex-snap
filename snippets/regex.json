@@ -1,0 +1,305 @@
+{
+  "Email Simple": {
+    "prefix": "rsemailsimple",
+    "body": [
+      "/^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/"
+    ],
+    "description": "Matches an email address. Valid Example: user@example.com | user@example"
+  },
+  "Email Advanced": {
+    "prefix": "rsemailadvanced",
+    "body": ["/^\\S+@\\S+\\.\\S+$/"],
+    "description": "Matches an email address. Valid Example: user@example.com"
+  },
+  "Email List": {
+    "prefix": "rsemaillist",
+    "body": [
+      "/^[-!#-'*+\\/0-9=?\\^-~]+(?:\\.[-!#-'*+\\/0-9=?\\^-~]+)*@[-!#-'*+\\/0-9=?\\^-~]+(?:\\.[-!#-'*+\\/0-9=?\\^-~]+)+(?:\\s*[,;]\\s*(?:[-!#-'*+\\/0-9=?\\^-~]+(?:\\.[-!#-'*+\\/0-9=?\\^-~]+)*@[-!#-'*+\\/0-9=?\\^-~]+(?:\\.[-!#-'*+\\/0-9=?\\^-~]+)+)?)*$/i"
+    ],
+    "description": "Multiple email addresses separated by commas or semicolons. Valid Example: user@example.com,test@test.com | test@test;user@example.com"
+  },
+  "CreditCard American Simple": {
+    "prefix": "rsccamericansimple",
+    "body": ["/^3[47]\\d{13,14}$/"],
+    "description": "Matches an American Express credit card number. Valid Example: 371111111111111 | 3422222222222222"
+  },
+  "CreditCard American Advanced": {
+    "prefix": "rsccamericanadvanced",
+    "body": ["/^3[47]\\d{1,2}(| |-)\\d{6}\\1\\d{6}$/"],
+    "description": "Matches an American Express credit card number with hyphens or spaces. Valid Example: 340 000000 000000 | 370-000000-000000 | 3400000000000000"
+  },
+  "CreditCard MasterCard Simple": {
+    "prefix": "rsccmastersimple",
+    "body": ["/^5[1-5]\\d{14}$/"],
+    "description": "Matches a MasterCard credit card number. Valid Example: 5100000000000000 | 5500000000000000"
+  },
+  "CreditCard MasterCard Advanced": {
+    "prefix": "rsccmasteradvanced",
+    "body": ["/^5[1-5]\\d{2}(| |-)(?:\\d{4}\\1){2}\\d{4}$/"],
+    "description": "Matches a MasterCard credit card number. Valid Example: 5100 0000 0000 0000 | 5200-0000-0000-0000 | 5500000000000000"
+  },
+  "CreditCard Visa Simple": {
+    "prefix": "rsccvisasimple",
+    "body": ["/^4\\d{12}(?:\\d{3})?$/"],
+    "description": "Matches a Visa credit card number. Valid Example: 4000000000000000 | 4000000000000"
+  },
+  "CreditCard Visa Advanced": {
+    "prefix": "rsccvisaadvanced",
+    "body": ["/^4\\d{3}(| |-)(?:\\d{4}\\1){2}\\d{4}$/"],
+    "description": "Matches a Visa credit card number. Valid Example: 4000 0000 0000 0000 | 4000-0000-0000-0000 | 4000000000000000"
+  },
+  "DateTime MMDDYYYY": {
+    "prefix": "rsmmddyy",
+    "body": [
+      "/^(?:(?:(?:0?[13578]|10|12)(-|/)(?:0?[1-9]|[12]\\d?|3[01]?)\\1|(?:0?[469]|11)(-|/)(?:0?[1-9]|[12]\\d?|3[0]?)\\2|0?2(-|/)(?:0?[1-9]|1\\d|2[0-8])\\3)(?:19[2-9]\\d{1}|20[01]\\d{1}|\\d{2}))$/"
+    ],
+    "description": "Matches a valid date, MM/DD/YYYY or MM-DD-YYYY. Valid Example: 03-02-01 | 03-02-2001"
+  },
+  "DateTime MonthDDYYYY": {
+    "prefix": "rsmonthddyy",
+    "body": [
+      "(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\\s+(\\d{1,2})\\,\\s+(\\d{4})"
+    ],
+    "description": "Matches a valid date. Valid Example: Jan 28, 1874 | January 28, 1874"
+  },
+  "DateTime Month": {
+    "prefix": "rsmonth",
+    "body": [
+      "^(jan(uary)?|feb(ruary)?|(mar)?ch|(apr)?il|may|(jun)?e|(jul)?y|(aug)?ust|sep(tember)?|sept|(oct)?ober|(nov)?ember|(dec)?ember)$"
+    ],
+    "description": "Matches a valid month. Valid Example: jan | january"
+  },
+  "Time 12": {
+    "prefix": "rstime12",
+    "body": ["/^(0?[1-9]|1[0-2]):[0-5][0-9]$/"],
+    "description": "Matches a valid time. Valid Example: 00:00 | 12:59"
+  },
+  "Time 24": {
+    "prefix": "rstime24",
+    "body": ["/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/"],
+    "description": "Matches a valid time. Valid Example: 00:00 | 23:59"
+  },
+  "Time ISO 8601": {
+    "prefix": "rsiso",
+    "body": [
+      "/^(?![+-]?\\d{4,5}-?(?:\\d{2}|W\\d{2})T)(?:|(\\d{4}|[+-]\\d{5})-?(?:|(0\\d|1[0-2])(?:|-?([0-2]\\d|3[0-1]))|([0-2]\\d{2}|3[0-5]\\d|36[0-6])|W([0-4]\\d|5[0-3])(?:|-?([1-7])))(?:(?!\\d)|T(?=\\d)))(?:|([01]\\d|2[0-4])(?:|:?([0-5]\\d)(?:|:?([0-5]\\d)(?:|\\.(\\d{3})))(?:|[zZ]|([+-](?:[01]\\d|2[0-4]))(?:|:?([0-5]\\d)))))$/"
+    ],
+    "description": "Matches a ISO 8601. Valid Example: 2024-02-23T13:45:30.000Z | 2024-05-15T08:00:00+01:00"
+  },
+  "Boolean": {
+    "prefix": "rsboolean",
+    "body": ["/^(?:(1|y(?:es)?|t(?:rue)?|on)|(0|n(?:o)?|f(?:alse)?|off))$/i"],
+    "description": "Matches a boolean. Valid Example: 1 | yes | true | 0 | false | off"
+  },
+  "Boolean True": {
+    "prefix": "rsboolenatrue",
+    "body": ["/^(?:0|n(?:o)?|f(?:alse)?|off)$/i"],
+    "description": "Matches a boolean. Valid Example: 1 | yes | true"
+  },
+  "Boolean False": {
+    "prefix": "rsbooleanfalse",
+    "body": ["/^(?:0|n(?:o)?|f(?:alse)?|off)$/i"],
+    "description": "Matches a boolean. Valid Example: 0 | false | off"
+  },
+  "Postal Code Brazil": {
+    "prefix": "rspcbrazil",
+    "body": ["/^\\d{5}-?\\d{3}$/"],
+    "description": "Matches a Postal Code. Valid Example: 12345678 | 12345-678"
+  },
+  "Postal Code USA": {
+    "prefix": "rspcusa",
+    "body": ["/^\\d{5}(?:-\\d{4})?$/"],
+    "description": "Matches a Postal Code. Valid Example: 12345 | 12345-6789"
+  },
+  "Postal Code Australia": {
+    "prefix": "rspcaustralia",
+    "body": ["/^(?:(?:[2-8]\\d|9[0-7]|0?[28]|0?9(?=09))(?:\\d{2}))$/"],
+    "description": "Matches a Postal Code. Valid Example: 0123"
+  },
+  "Postal Code Canada": {
+    "prefix": "rspccanada",
+    "body": ["/^(?:[ABCEGHJ-NPRSTVXY]\\d[A-Z][ -]?\\d[A-Z]\\d)$/i"],
+    "description": "Matches a Postal Code. Valid Example: A1A 1A1 | A1A1A1"
+  },
+  "Postal Code France": {
+    "prefix": "rspcfrance",
+    "body": ["/^(?:0[1-9]|[1-8]\\d|9[0-8])\\d{3}$/"],
+    "description": "Matches a Postal Code. Valid Example: 12345"
+  },
+  "Postal Code Germany": {
+    "prefix": "rspcgermany",
+    "body": ["/^\\d{5}$/"],
+    "description": "Matches a Postal Code. Valid Example: 12345"
+  },
+  "Postal Code Italy": {
+    "prefix": "rspcitaly",
+    "body": ["/^\\d{5}$/"],
+    "description": "Matches a Postal Code. Valid Example: 12345"
+  },
+  "Postal Code Normway": {
+    "prefix": "rspcnorway",
+    "body": ["/^\\d{4}$/"],
+    "description": "Matches a Postal Code. Valid Example: 1234"
+  },
+  "Postal Code Spain": {
+    "prefix": "rspcspain",
+    "body": ["/^(?:0[1-9]|[1-4]\\d|5[0-2])\\d{3}$/"],
+    "description": "Matches a Postal Code. Valid Example: 01000 | 52000"
+  },
+  "Postal Code UK": {
+    "prefix": "rspcuk",
+    "body": [
+      "/^(?:GIR 0AA|(?:(?:(?:A[BL]|B[ABDHLNRSTX]?|C[ABFHMORTVW]|D[ADEGHLNTY]|E[HNX]?|F[KY]|G[LUY]?|H[ADGPRSUX]|I[GMPV]|JE|K[ATWY]|L[ADELNSU]?|M[EKL]?|N[EGNPRW]?|O[LX]|P[AEHLOR]|R[GHM]|S[AEGK-PRSTY]?|T[ADFNQRSW]|UB|W[ADFNRSV]|YO|ZE)[1-9]?\\d|(?:(?:E|N|NW|SE|SW|W)1|EC[1-4]|WC[12])[A-HJKMNPR-Y]|(?:SW|W)(?:[2-9]|[1-9]\\d)|EC[1-9]\\d)\\d[ABD-HJLNP-UW-Z]{2}))$/i"
+    ],
+    "description": "Matches a Postal Code. Valid Example: AB19XY | AB129XY"
+  },
+  "Number": {
+    "prefix": "rsnumb",
+    "body": ["/^-?\\d*\\.?\\d+$/"],
+    "description": "Matches a Number. Valid Example: -2 | 26 | -0.154"
+  },
+  "Number Positive": {
+    "prefix": "rsnumbpositive",
+    "body": ["/^\\d*\\.?\\d+$/"],
+    "description": "Matches a Positive Number. Valid Example: 0 | 26 | 0.154"
+  },
+  "Number Negative": {
+    "prefix": "rsnumbnegative",
+    "body": ["/^-\\d*\\.?\\d+$/"],
+    "description": "Matches a Positive Number. Valid Example: -2 | -26 | -0.154"
+  },
+  "Integer Number": {
+    "prefix": "rsint",
+    "body": ["/^-?\\d+$/"],
+    "description": "Matches a Integer Number. Valid Example: -2 | 26 | -55"
+  },
+  "Integer Positive Number": {
+    "prefix": "rsintpositive",
+    "body": ["/^\\d+$/"],
+    "description": "Matches a Positive Integer Number. Valid Example: 2 | 26 | 55"
+  },
+  "Integer Negative Number": {
+    "prefix": "rsintnegative",
+    "body": ["/^-\\d+$/"],
+    "description": "Matches a Negative Integer Number. Valid Example: -2 | -26 | -55"
+  },
+  "URL IPv4": {
+    "prefix": "rsipv4",
+    "body": ["^(?:[0-9]{1,3}\\.){3}[0-9]{1,3}$"],
+    "description": "Matches a IPv4. Valid Example: 192.168.1.1 | 10.0.0.255"
+  },
+  "URL IPv6": {
+    "prefix": "rsipv6",
+    "body": [
+      "/^(?:(?:(?:[0-9A-Fa-f]{0,4}:){7}[0-9A-Fa-f]{0,4})|(?:(?:[0-9A-Fa-f]{0,4}:){6}:[0-9A-Fa-f]{0,4})|(?:(?:[0-9A-Fa-f]{0,4}:){5}:(?:[0-9A-Fa-f]{0,4}:)?[0-9A-Fa-f]{0,4})|(?:(?:[0-9A-Fa-f]{0,4}:){4}:(?:[0-9A-Fa-f]{0,4}:){0,2}[0-9A-Fa-f]{0,4})|(?:(?:[0-9A-Fa-f]{0,4}:){3}:(?:[0-9A-Fa-f]{0,4}:){0,3}[0-9A-Fa-f]{0,4})|(?:(?:[0-9A-Fa-f]{0,4}:){2}:(?:[0-9A-Fa-f]{0,4}:){0,4}[0-9A-Fa-f]{0,4})|(?:(?:[0-9A-Fa-f]{0,4}:){6}(?:(?:(?:25[0-5])|(?:2[0-4]\\d)|(?:1\\d{2})|(?:\\d{1,2}))\\.){3}(?:(?:25[0-5])|(?:2[0-4]\\d)|(?:1\\d{2})|(?:\\d{1,2})))|(?:(?:[0-9A-Fa-f]{0,4}:){0,5}:(?:(?:(?:25[0-5])|(?:2[0-4]\\d)|(?:1\\d{2})|(?:\\d{1,2}))\\.){3}(?:(?:25[0-5])|(?:2[0-4]\\d)|(?:1\\d{2})|(?:\\d{1,2})))|(?:::(?:[0-9A-Fa-f]{0,4}:){0,5}(?:(?:(?:25[0-5])|(?:2[0-4]\\d)|(?:1\\d{2})|(?:\\d{1,2}))\\.){3}(?:(?:25[0-5])|(?:2[0-4]\\d)|(?:1\\d{2})|(?:\\d{1,2})))|(?:[0-9A-Fa-f]{0,4}::(?:[0-9A-Fa-f]{0,4}:){0,5}[0-9A-Fa-f]{0,4})|(?:::(?:[0-9A-Fa-f]{0,4}:){0,6}[0-9A-Fa-f]{0,4})|(?:(?:[0-9A-Fa-f]{0,4}:){1,7}:))$/"
+    ],
+    "description": "Matches a IPv6. Valid Example: 2001:0db8:85a3:0000:0000:8a2e:0370:7334 | fe80::1"
+  },
+  "URL Base": {
+    "prefix": "rsurlbase",
+    "body": [
+      "(https://www\\.|http://www\\.|https://|http://)?[a-zA-Z0-9]{2,}(\\.[a-zA-Z0-9]{2,})(\\.[a-zA-Z0-9]{2,})?"
+    ],
+    "description": "Matches a URL. Valid Example: https://www.example.com | https://example.org | example.com | www.example.com"
+  },
+  "URL Path": {
+    "prefix": "rsurlpath",
+    "body": [
+      "(https://www\\.|http://www\\.|https://|http://)?[a-zA-Z0-9]{2,}(\\.[a-zA-Z0-9]{2,})(\\.[a-zA-Z0-9]{2,})?/[a-zA-Z0-9]{2,}"
+    ],
+    "description": "Matches a URL Path. Valid Example: https://www.example.com/path | https://example.org/path | example.com/path | www.example.com/path"
+  },
+  "ISBN-10": {
+    "prefix": "rsisbn10",
+    "body": [
+      "/^(?:ISBN(?:-10)?:?\\ *((?=\\d{1,5}([ -]?)\\d{1,7}\\2?\\d{1,6}\\2?\\d)(?:\\d\\2*){9}[\\dX]))$/i"
+    ],
+    "description": "Matches a ISBN-10. Valid Example: ISBN 1561616161 | ISBN: 978-0615-856"
+  },
+  "ISBN-13": {
+    "prefix": "rsisbn13",
+    "body": [
+      "/^(?:ISBN(?:-13)?:?\\ *(97(?:8|9)([ -]?)(?=\\d{1,5}\\2?\\d{1,7}\\2?\\d{1,6}\\2?\\d)(?:\\d\\2*){9}\\d))$/i"
+    ],
+    "description": "Matches a ISBN-13. Valid Example: ISBN 978 787 78 78788 | ISBN-13: 978-0615-856-73-5"
+  },
+  "MAC Address": {
+    "prefix": "rsmacid",
+    "body": [
+      "/^(?:[0-9A-Fa-f]{2}([:-]?)[0-9A-Fa-f]{2})(?:(?:\\1|\\.)(?:[0-9A-Fa-f]{2}([:-]?)[0-9A-Fa-f]{2})){2}$/"
+    ],
+    "description": "Matches a MAC Address. Valid Example: 01:23:45:67:89:ab | 0123456789ab"
+  },
+  "UUID": {
+    "prefix": "rsuuid",
+    "body": [
+      "/^[0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}$/"
+    ],
+    "description": "Matches a UUID. Valid Example: 575adcad-1d93-4408-a45c-03e9f44b6243"
+  },
+  "Image Extensions": {
+    "prefix": "rsimgfile",
+    "body": [
+      "/^[0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}$/"
+    ],
+    "description": "Matches a Img Extentsions. Valid Example: img.jpg  | img.jpeg | img.png | img.gif | img.bmp"
+  },
+  "Phone Number": {
+    "prefix": "rsphone",
+    "body": [
+      "/^(\\+?(\\d{1,3}))?[-. ]?(\\(?\\d{3}\\)?|\\d{3})[-. ]?\\d{3}[-. ]?\\d{4}$/"
+    ],
+    "description": "Matches a Phone Number. Valid Example: 1234567890 | 123 456 7890 | (123) 456-7890"
+  },
+  "Base64": {
+    "prefix": "rsbase64",
+    "body": [
+      "/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}={2})$/gm"
+    ],
+    "description": "Matches a Base64. Valid Example: SGVsbG8gV29ybGQhCg=="
+  },
+  "Hex Color": {
+    "prefix": "rshexcolor",
+    "body": ["/^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/"],
+    "description": "Matches a Hexadecimal Color. Valid Example: #FFA500 | #F00"
+  },
+  "Username": {
+    "prefix": "rsusername",
+    "body": ["/^[a-zA-Z0-9_-]{3,16}$/"],
+    "description": "Matches a Username. Valid Example: Lucas | Cap"
+  },
+  "Password Strength": {
+    "prefix": "rspasswordstr",
+    "body": ["(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$"],
+    "description": "Matches a Password with: lowercase letter, 1 uppercase letter, 1 number, and be at least 8 characters long. Valid Example: MyP@ssw0rd"
+  },
+  "Duplicated Words": {
+    "prefix": "rsduplicate",
+    "body": ["\b(\\w+)\\s+\\1\b"],
+    "description": "Matches a Duplicated Word. Valid Example: The the quick brown fox jumps jumps over the lazy dog"
+  },
+  "HTML tags": {
+    "prefix": "rshtmltag",
+    "body": ["<([a-z]+)(?![^>]*/>)[^>]*>"],
+    "description": "Matches a HTML tag. Valid Example: <div>Hello, World!</div>"
+  },
+  "HTML img Tag": {
+    "prefix": "rsimgsrc",
+    "body": ["<\\s*img[^>]+src\\s*=\\s*([\"'])(.*?)\\1[^>]*>"],
+    "description": "Matches an HTML img tag. Valid Example: <img src=\"example.jpg\" alt=\"Example Image\">"
+  },
+  "Youtube ID Video": {
+    "prefix": "rsytidvideo",
+    "body": [
+      "(?:https?://)?(?:youtu\\.be/|(?:[a-z]{2,3}\\.)?youtube\\.com/watch(?:\\?|#\\!)v=)([\\w-]{11})"
+    ],
+    "description": "Matches an Youtube ID Video. Valid Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  "Vehicle Identification Numbers": {
+    "prefix": "rsvin",
+    "body": [
+      "/^(?<wmi>[A-HJ-NPR-Z\\d]{3})(?<vds>[A-HJ-NPR-Z\\d]{5})(?<check>[\\dX])(?<vis>(?<year>[A-HJ-NPR-Z\\d])(?<plant>[A-HJ-NPR-Z\\d])(?<seq>[A-HJ-NPR-Z\\d]{6}))$/"
+    ],
+    "description": "Matches an Vehicle ID. Valid Example: 1HGBH41JXMN109186"
+  }
+}
