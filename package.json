@@ -4,6 +4,11 @@
   "publisher": "Sellucas",
   "description": "Insert Regex patterns effortlessly, in seconds!",
   "version": "0.0.1",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sellucas/regex-snap"
+  },
   "engines": {
     "vscode": "^1.86.0"
   },
